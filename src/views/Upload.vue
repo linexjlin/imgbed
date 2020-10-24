@@ -79,7 +79,7 @@ export default {
     onUploadSuccess (uuid, image) {
       this.$set(this.uploading[uuid], 'loading', false)
       this.$store.commit(mutationTypes.ADD_UPLOADED, image)
-
+      this.$copyText(image.url)
       this.$notify({
         dangerouslyUseHTMLString: true,
         customClass: 'upload-notification',
