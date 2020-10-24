@@ -34,7 +34,11 @@ export default class Ipfs {
     if (burl === '') {
       burl = 'https://ipfs.ee/ipfs'
     }
-    let url = burl + '/' + _.get(res, 'data.Hash') + '/' + _.get(res, 'data.Name')
+    let name = _.get(res, 'data.Name')
+    if (name === 'image.png') {
+      name = _.get(res, 'data.Size') + '.png'
+    }
+    let url = burl + '/' + _.get(res, 'data.Hash') + '/' + name
     return {
       url,
       name: file.name,
