@@ -26,14 +26,6 @@
       </div>
     </div>
 
-    <el-dialog
-      title="服务商配置"
-      :visible.sync="needSetting"
-      :show-close="false"
-      :close-on-click-modal="false"
-      :close-on-press-escape="false">
-      <setting-cop/>
-    </el-dialog>
   </div>
 </template>
 
