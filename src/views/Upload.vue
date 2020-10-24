@@ -21,6 +21,7 @@
 import uuidv1 from 'uuid/v1'
 import isImage from '@/utils/is-image'
 import * as mutationTypes from '@/store/mutation-types'
+import { SET_USING, SET_CONFIGS } from '@/store/mutation-types'
 
 export default {
   name: 'upload',
@@ -50,6 +51,15 @@ export default {
       }
       return false
     }
+  },
+
+  created () {
+    this.$store.commit(SET_USING, 'ipfs')
+    this.$store.commit(SET_CONFIGS, {
+      'ipfs': {
+        'providerName': 'ipfs'
+      }
+    })
   },
 
   methods: {
